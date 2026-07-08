@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>赣乡佬江西小炒 · 新店开业全案方案</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system,'PingFang SC','Microsoft YaHei',sans-serif; background: #0f0f0f; color: #f0ece4; line-height: 1.8; overflow-x: hidden; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0d0a 40%, #0a1a0f 100%);
+  min-height: 65vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 80px 20px; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(ellipse at 30% 30%,rgba(204,68,34,0.08) 0%,transparent 50%),
+              radial-gradient(ellipse at 70% 70%,rgba(240,180,41,0.06) 0%,transparent 50%);
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-badge { display: inline-block; border:1px solid #CC4422; color:#E65A33; font-size:12px; letter-spacing:4px; padding:6px 18px; margin-bottom:20px; border-radius:2px; }
+.hero h1 { font-size:clamp(28px,5vw,50px); font-weight:900; color:#F0ECE4; margin-bottom:10px; line-height:1.15; }
+.hero h1 span { color:#E65A33; }
+.hero .sub { font-size:clamp(14px,2vw,18px); color:#8a8a80; font-weight:300; margin:0 auto 24px; }
+.hero-tags { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+.hero-tags span { background:rgba(204,68,34,0.08); border:1px solid rgba(204,68,34,0.15); padding:6px 14px; border-radius:14px; font-size:13px; color:#d08060; }
+
+.section { padding: 55px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
+.section:last-child { border-bottom:none; }
+.s-title { font-size:clamp(22px,3vw,32px); font-weight:700; color:#F0ECE4; margin-bottom:6px; }
+.s-title .num { color:#E65A33; font-size:.6em; font-weight:400; margin-right:8px; }
+.s-desc { color:#6a6a60; font-size:14px; margin-bottom:28px; }
+.s-line { width:50px; height:3px; background:#CC4422; margin-bottom:20px; }
+
+.cgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+.card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:24px; transition:all .3s; }
+.card:hover { background:rgba(255,255,255,0.05); border-color:rgba(230,90,51,0.12); }
+.card .icon { font-size:28px; display:block; margin-bottom:8px; }
+.card h3 { font-size:16px; color:#F0B429; margin-bottom:8px; }
+.card p, .card li { font-size:13.5px; color:#b0a8a0; line-height:1.65; }
+.card ul { list-style:none; padding:0; }
+.card ul li { padding-left:16px; margin-bottom:5px; position:relative; }
+.card ul li::before { content:'›'; position:absolute; left:0; color:#CC4422; font-weight:700; }
+
+table { width:100%; border-collapse:collapse; margin:12px 0; }
+th, td { padding:10px 14px; text-align:left; font-size:13px; border-bottom:1px solid rgba(255,255,255,0.05); }
+th { background:rgba(204,68,34,0.05); color:#E65A33; font-weight:600; white-space:nowrap; }
+td { color:#b0a8a0; }
+
+.hbox { background:linear-gradient(135deg,rgba(204,68,34,0.06) 0%,rgba(240,180,41,0.03) 100%); border:1px solid rgba(230,90,51,0.12); border-radius:10px; padding:24px; margin:16px 0; }
+.hbox h4 { color:#F0B429; font-size:15px; margin-bottom:8px; }
+.hbox p { font-size:13px; color:#8a8a80; }
+
+.tl { position:relative; padding-left:28px; }
+.tl::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:2px; background:linear-gradient(180deg,#CC4422,rgba(204,68,34,.05)); }
+.tl-item { position:relative; margin-bottom:22px; }
+.tl-item::before { content:''; position:absolute; left:-22px; top:6px; width:10px; height:10px; border-radius:50%; background:#CC4422; border:2px solid #0f0f0f; }
+.tl-item .ttag { display:inline-block; font-size:11px; padding:2px 9px; background:rgba(204,68,34,0.1); color:#E65A33; border-radius:8px; margin-bottom:4px; }
+.tl-item h4 { font-size:15px; color:#F0ECE4; margin-bottom:3px; }
+.tl-item p { font-size:13px; color:#6a6a60; }
+
+.kpi-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; }
+.kpi-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:20px; text-align:center; }
+.kpi-card .num { font-size:24px; font-weight:700; color:#E65A33; }
+.kpi-card .label { font-size:12px; color:#6a6a60; margin-top:4px; }
+
+.talk-box { background:rgba(230,90,51,0.04); border:1px solid rgba(230,90,51,0.1); border-radius:10px; padding:22px; margin:10px 0; }
+.talk-box .tlabel { font-size:12px; color:#E65A33; margin-bottom:6px; }
+.talk-box p { font-size:14px; color:#d0c8b8; line-height:1.7; }
+
+.comp-box { background:rgba(244,67,54,0.04); border:1px solid rgba(244,67,54,0.08); border-radius:8px; padding:16px; margin:12px 0; }
+.comp-box h4 { color:#EF5350; font-size:13px; margin-bottom:6px; }
+.comp-box p { font-size:12px; color:#6a6a60; }
+
+.footer { text-align:center; padding:30px; color:#444; font-size:12px; border-top:1px solid rgba(255,255,255,0.03); }
+.footer .name { color:#E65A33; }
+
+@media (max-width:768px) { .hero { min-height:auto; padding:60px 20px; } .cgrid { grid-template-columns:1fr; } .kpi-row { grid-template-columns:1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">新店开业 · 全案方案</div>
+    <h1>赣乡佬江西小炒<br><span>新港商圈 · 新店起势方案</span></h1>
+    <p class="sub">塘沽新港 · 江西小炒家常菜 · 人均¥35-50<br>美团智能版收银 + 开业引爆 + 线上引流</p>
+    <div class="hero-tags">
+      <span>📍 新港港滨路110号</span>
+      <span>🍳 江西小炒·家常菜</span>
+      <span>💰 人均¥35-50</span>
+      <span>🆕 暂无星级</span>
+    </div>
+  </div>
+</section>
+
+<!-- 01 品牌定位 -->
+<section class="section">
+  <div class="wrap">
+    <div class="s-line"></div>
+    <h2 class="s-title"><span class="num">01</span>品牌定位 · 新港商圈的小炒之王</h2>
+    <p class="s-desc">江西小炒品类特点：翻台快、复购高、适合做周边生意</p>
+    <div class="cgrid">
+      <div class="card">
+        <span class="icon">🎯</span>
+        <h3>客群画像</h3>
+        <ul>
+          <li>新港商圈上班族（午餐/晚餐简餐）</li>
+          <li>周边社区居民（家庭晚餐/周末）</li>
+          <li>塘沽码头/港务工人（工作餐）</li>
+          <li><strong>核心需求：</strong>快、实惠、下饭</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="icon">🔥</span>
+        <h3>品类优势</h3>
+        <ul>
+          <li>江西小炒锅气足、出餐快、人均低</li>
+          <li>翻台率高（一桌20-30分钟吃完）</li>
+          <li>客单价低但单量多，月营收可观</li>
+          <li>适合美团收银的扫码点餐+KDS快速出餐</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="icon">💡</span>
+        <h3>品牌语</h3>
+        <p style="font-size:20px;text-align:center;color:#F0B429;margin-top:8px;">"新港人的江西味，小炒就是快"</p>
+        <p style="text-align:center;color:#666;font-size:13px;margin-top:4px;">赣乡佬——新港人自己的小炒食堂</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 美团收银 -->
+<section class="section">
+  <div class="wrap">
+    <div class="s-line"></div>
+    <h2 class="s-title"><span class="num">02</span>美团智能版收银 · 小炒店的效率神器</h2>
+    <p class="s-desc">小炒店核心就是快——美团收银帮您更快</p>
+    <div class="cgrid">
+      <div class="card">
+        <span class="icon">📱</span>
+        <h3>扫码点餐</h3>
+        <p>客人入座扫码看菜单→直接下单。小炒菜单本来就短，客人看几秒就点好了，不用等服务员拿菜单、记单子。省人省时间，翻台更快。</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚡</span>
+        <h3>KDS厨房显示</h3>
+        <p>前台一扫码下单 → 厨房大屏立刻跳出菜品。小炒讲究锅气，出餐要快。KDS按时间排序，厨师做完一道划一道，不会漏单。</p>
+      </div>
+      <div class="card">
+        <span class="icon">🧾</span>
+        <h3>数电发票</h3>
+        <p>商务客/上班族吃完要报销？扫码即开，电子发票自动推送。省手写、不排队、不耽误翻台。</p>
+      </div>
+      <div class="card">
+        <span class="icon">📊</span>
+        <h3>经营数据</h3>
+        <p>哪些菜卖得好（辣椒炒肉？酸菜鱼？）、哪个时段人最多、翻台率多少，数据一目了然。备货不浪费、排班更精准。</p>
+      </div>
+    </div>
+
+    <div class="talk-box">
+      <div class="tlabel">💬 跟老板聊的话术</div>
+      <p>
+      "老板，小炒店最关键的是什么？<strong style="color:#F0B429;">快！</strong><br><br>
+      客人来吃小炒就是图快，扫码点餐一上，客人自己点单，不用等服务员，翻台快一倍。<br>
+      KDS一装，厨房大屏显示，厨师只管照着做，不用扯嗓子喊，不会漏。<br>
+      数电发票一键开，不用手写。<br><br>
+      一套美团收银下来，<strong style="color:#E65A33;">翻台从1.0提到2.0</strong>，营收翻倍不是梦。<br>
+      而且现在新店上收银还便宜，开业前装好万事不慌。"
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 开业策略 -->
+<section class="section">
+  <div class="wrap">
+    <div class="s-line"></div>
+    <h2 class="s-title"><span class="num">03</span>开业三阶段 · 从0到4.5星</h2>
+    <p class="s-desc">小炒品类冲星快，新店一个月就能拉起来</p>
+
+    <h3 style="font-size:16px;color:#E65A33;margin-bottom:10px;">阶段一：预热蓄水（开业前7天）</h3>
+    <div class="cgrid" style="margin-bottom:24px;">
+      <div class="card">
+        <span class="icon">🎫</span>
+        <h3>团购预售</h3>
+        <table>
+          <tr><th>套餐</th><th>价格</th><th>定位</th></tr>
+          <tr><td>单人小炒套餐</td><td>¥19.9</td><td>工作日引流</td></tr>
+          <tr><td>双人江西下饭菜</td><td>¥39.9</td><td>主推爆款</td></tr>
+          <tr><td>四人家庭小炒</td><td>¥79.9</td><td>家庭聚餐</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <span class="icon">📢</span>
+        <h3>线下地推</h3>
+        <ul>
+          <li>印制DM单2000张，扫新港写字楼+小区</li>
+          <li>开业前三天挂横幅：「新店开业·全场8折」</li>
+          <li>扫码进群送饮料，建微信群拉新</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="icon">📱</span>
+        <h3>大众点评认领</h3>
+        <ul>
+          <li>开业前完成店铺认领+装修</li>
+          <li>上传门头照+环境图+菜品图</li>
+          <li>申请「新店免费试」霸王餐</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-size:16px;color:#E65A33;margin-bottom:10px;">阶段二：爆发引爆（开业前3天→开业）</h3>
+    <div class="cgrid" style="margin-bottom:24px;">
+      <div class="card">
+        <span class="icon">🎉</span>
+        <h3>开业活动</h3>
+        <ul>
+          <li>前3天全场8折（酒水除外）</li>
+          <li>储值翻倍：充100送20、充200送50</li>
+          <li>收藏打卡送冰镇饮料/凉菜</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="icon">⭐</span>
+        <h3>免费试+冲星</h3>
+        <ul>
+          <li>免费试用评价上星（3-5天出星）</li>
+          <li>引导真实好评，不走违规</li>
+          <li>目标：首周冲上4.0星</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-size:16px;color:#E65A33;margin-bottom:10px;">阶段三：口碑沉淀（开业后1-14天）</h3>
+    <div class="cgrid">
+      <div class="card">
+        <span class="icon">🔄</span>
+        <h3>复购裂变</h3>
+        <ul>
+          <li>群内活动：发菜品图到朋友圈→领5元代金券</li>
+          <li>满10次送1次（积分卡）</li>
+          <li>储值会员专享日</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="icon">📈</span>
+        <h3>推广通</h3>
+        <ul>
+          <li>评分4.0后开启推广通，日均¥80-100</li>
+          <li>投放新港商圈+塘沽区域</li>
+          <li>重点时段：10:30-13:00/17:00-19:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="comp-box" style="margin-top:16px;">
+      <h4>⚠️ 合规提醒</h4>
+      <p>❌ 禁止「写好评送菜品」→ ✅ 收藏打卡送饮料/进群送凉菜<br>所有员工统一话术，严禁刷单</p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 执行节奏 -->
+<section class="section">
+  <div class="wrap">
+    <div class="s-line"></div>
+    <h2 class="s-title"><span class="num">04</span>执行节奏表</h2>
+    <div class="tl">
+      <div class="tl-item"><span class="ttag">T-7天</span><h4>筹备</h4><p>美团收银安装调试·点评店铺认领·上架团购·印制DM单</p></div>
+      <div class="tl-item"><span class="ttag">T-3天</span><h4>预热</h4><p>地推发DM单·建微信群·挂横幅·申请免费试</p></div>
+      <div class="tl-item"><span class="ttag">开业</span><h4>引爆</h4><p>8折+储值翻倍+收藏打卡送饮料+免费试用到位</p></div>
+      <div class="tl-item"><span class="ttag">第3-7天</span><h4>冲星</h4><p>免费试用评价上星·推广通开启·目标4.0⭐</p></div>
+      <div class="tl-item"><span class="ttag">第7-30天</span><h4>稳定</h4><p>评分目标4.5⭐·推广通优化·群裂变·数据复盘</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 预算+KPI -->
+<section class="section">
+  <div class="wrap">
+    <div class="s-line"></div>
+    <h2 class="s-title"><span class="num">05</span>预算 & KPI</h2>
+    <div class="cgrid">
+      <div class="card">
+        <h3>💰 首月投入</h3>
+        <table>
+          <tr><th>项目</th><th>预算</th></tr>
+          <tr><td>美团收银（收银机+KDS+扫码点餐）</td><td>¥3,000-5,000</td></tr>
+          <tr><td>开业活动（8折让利+储值成本+DM单）</td><td>¥4,000-6,000</td></tr>
+          <tr><td>推广通（日均¥80-100）</td><td>¥2,400-3,000/月</td></tr>
+          <tr><td>免费试套餐/其他</td><td>¥1,000-2,000</td></tr>
+          <tr style="background:rgba(204,68,34,0.04);"><td><strong>合计</strong></td><td><strong>¥10,000-16,000</strong></td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>📈 KPI目标</h3>
+        <div class="kpi-row" style="margin-top:10px;">
+          <div class="kpi-card"><div class="num">4.5⭐</div><div class="label">30天目标评分</div></div>
+          <div class="kpi-card"><div class="num">2.0+</div><div class="label">翻台率</div></div>
+          <div class="kpi-card"><div class="num">300+</div><div class="label">私域会员</div></div>
+          <div class="kpi-card"><div class="num">¥6-10万</div><div class="label">月营收</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 定心丸 -->
+<section class="section" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="s-line"></div>
+    <h2 class="s-title"><span class="num">06</span>一句话定心丸</h2>
+    <div class="hbox" style="text-align:center;padding:30px;">
+      <p style="font-size:clamp(16px,2.5vw,22px);line-height:1.6;color:#F0ECE4;">
+      "江西小炒是新港商圈最缺的品类——便宜、好吃、出餐快。<br>
+      配上<strong style="color:#E65A33;">美团收银的扫码点餐和KDS</strong>，翻台做到行业天花板，<br>
+      再配合开业免费试冲星，<strong style="color:#F0B429;">一个月拉到4.5星</strong>，<br>
+      新港人的小炒食堂就是赣乡佬！🔥"
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <p>娄苏 · 美团智能版收银系统 出品</p>
+  <p style="margin-top:4px;">赣乡佬江西小炒 · 新店开业全案方案 · 2026-07</p>
+</div>
+
+</body>
+</html>
